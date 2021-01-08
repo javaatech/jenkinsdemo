@@ -1,0 +1,12 @@
+job('simpleDSLJobWithParams'){
+  parameters{
+  	stringParam('Object','undescribed','This parameter describes type of parameter')
+  }
+  steps{
+  	shell('echo $JOB_NAME $BUILD_NUMBER')
+    shell('echo $OBJECT')
+  }
+  publishers{
+  	downstream('simpleDSLJobWithParams','SUCCESS')
+  }
+}
