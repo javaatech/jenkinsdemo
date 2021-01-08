@@ -4,7 +4,7 @@ node{
   }
   stage('Write'){
     sh 'echo "This is a message" > NewFile1'
-    sh 'env' >NewFile1
+    sh 'echo "Build number:"$BUILD_NUMBER >NewFile1'
   }
   stage('Print'){
     sh 'cat NewFile1'
